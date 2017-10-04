@@ -2,7 +2,7 @@ import csv
 
 dataList = []
 with open('./train.csv', 'rb') as csvfile:
-    spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+    spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
     for row in spamreader:
         dataList.append(row)
 
