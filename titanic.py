@@ -57,7 +57,7 @@ peeps = []
 for person in sorted(people):
     if person["Age"] == -1:
         continue
-    peeps.append([int(float(person['Age'])//10), person['Sex'], int(person['Pclass'])])
+    peeps.append([int(person['Age'] // 10), person['Sex'], person['Pclass'], person['FamSize'] // 2])
 
 print sorted(peeps)
 print target_list
@@ -67,3 +67,4 @@ print len(target_list)
 test_peeps = test_data.get_test_peeps()
 print test_peeps
 print len(test_peeps)
+
