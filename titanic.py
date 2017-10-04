@@ -6,7 +6,7 @@ with open('./train.csv', 'rb') as csvfile:
     for row in spamreader:
         dataList.append(row)
 
-big_list = []
+people = []
 
 for row in dataList:
     dic = {}
@@ -22,6 +22,6 @@ for row in dataList:
     dic['Fare'] = row[9]
     dic['Cabin'] = row[10]
     dic['Embarked'] = row[11]
-    big_list.append(dic)
+    people.append(dic)
 
-print big_list
+print people
