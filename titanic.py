@@ -40,13 +40,15 @@ print people
 def get_target_list():
     target_list = []
     for person in sorted(people):
+        if person['Age'] == -1:
+            continue
         try:
             target_list.append(int(person['Survived']))
         except:
-            print person['Survived']
-
-    print target_list
+            continue
     return target_list
+
+target_list = get_target_list()
 
 peeps = []
 for person in sorted(people):
