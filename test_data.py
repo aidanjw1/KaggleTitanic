@@ -44,6 +44,10 @@ def get_test_peeps():
     for person in sorted(people):
         if person["Age"] == -1:
             continue
-        test_peeps.append([int(float(person['Age'])//10), person['Sex'], int(person['Pclass'])])
+        test_peeps.append([int(float(person['Age'])//10), person['Sex'], int(person['Pclass']), person['FamSize'] // 2])
 
     return test_peeps
+
+if __name__ == "__main__":
+    peeps = get_test_peeps()
+    print peeps
