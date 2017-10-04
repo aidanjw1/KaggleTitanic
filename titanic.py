@@ -1,5 +1,6 @@
 import csv
 import test_data
+import random
 
 dataList = []
 with open('./train.csv', 'rb') as csvfile:
@@ -56,8 +57,9 @@ target_list = get_target_list()
 peeps = []
 for person in sorted(people):
     if person["Age"] == -1:
-        continue
-    peeps.append([int(person['Age'] // 10), person['Sex'], person['Pclass'], person['FamSize'] // 2])
+        peeps.append([int(random.randrange(10, 50) // 10), person['Sex'], person['Pclass'], person['FamSize'] // 2])
+    else:
+        peeps.append([int(person['Age'] // 10), person['Sex'], person['Pclass'], person['FamSize'] // 2])
 
 print sorted(peeps)
 print target_list
@@ -67,4 +69,3 @@ print len(target_list)
 test_peeps = test_data.get_test_peeps()
 print test_peeps
 print len(test_peeps)
-
