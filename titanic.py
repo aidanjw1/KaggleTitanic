@@ -32,7 +32,7 @@ for person in people:
     if person['Sex'] == "male":
         person['Sex'] = 0
     else:
-        person['Sex'] = 1  
+        person['Sex'] = 1
 
 print people
 
@@ -46,3 +46,10 @@ def get_target_list():
 
     print target_list
     return target_list
+
+peeps = []
+for person in sorted(people):
+    try:
+        peeps.append([person['Sex'], person['Pclass'], float(person['Age'])//10])
+    except:
+        continue
