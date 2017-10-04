@@ -1,4 +1,5 @@
 import csv
+import test_data
 
 dataList = []
 with open('./train.csv', 'rb') as csvfile:
@@ -59,6 +60,10 @@ for person in sorted(people):
     peeps.append([int(float(person['Age'])//10), person['Sex'], int(person['Pclass'])])
 
 print sorted(peeps)
-
+print target_list
 print len(peeps)
 print len(target_list)
+
+test_peeps = test_data.get_test_peeps()
+print test_peeps
+print len(test_peeps)
