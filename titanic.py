@@ -12,28 +12,30 @@ header = True
 for row in dataList:
     if not header:
         dic = {}
-        dic['PassengerId'] = row[0]
-        dic['Survived'] = row[1]
-        dic['Pclass'] = row[2]
+        dic['PassengerId'] = int(row[0])
+        dic['Survived'] = int(row[1])
+        dic['Pclass'] = int(row[2])
         dic['Name'] = row[3]
-        dic['Sex'] = row[4]
-        dic['Age'] = row[5]
+
+        if row[4] == "male":
+            dic['Sex'] = 0
+        else:
+            dic['Sex'] = 1
+
+        try:
+            dic['Age'] = float(row[5])
+        except:
+            dic['Age'] = -1
+
         dic['FamSize'] = int(row[6]) + int(row[7])
         dic['Ticket'] = row[8]
-        dic['Fare'] = row[9]
+        dic['Fare'] = float(row[9])
         dic['Cabin'] = row[10]
         dic['Embarked'] = row[11]
         people.append(dic)
 
     else:
         header = False
-
-
-for person in people:
-    if person['Sex'] == "male":
-        person['Sex'] = 0
-    else:
-        person['Sex'] = 1
 
 print people
 
