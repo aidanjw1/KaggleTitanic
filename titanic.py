@@ -53,6 +53,7 @@ def get_target_list():
 peeps = []
 for person in sorted(people):
     try:
-        peeps.append([person['Sex'], person['Pclass'], float(person['Age'])//10])
+        peeps.append([int(float(person['Age'])//10), person['Sex'], int(person['Pclass'])])
     except:
         continue
+print sorted(peeps)
