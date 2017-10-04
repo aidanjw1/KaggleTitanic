@@ -31,3 +31,14 @@ for person in people:
         person['Sex'] = 1  
 
 print people
+
+def get_target_list():
+    target_list = []
+    for person in sorted(people):
+        try:
+            target_list.append(int(person['Survived']))
+        except:
+            print person['Survived']
+
+    print target_list
+    return target_list
