@@ -28,6 +28,9 @@ print c
 
 
 plt.bar(c.keys(), c.values())
+plt.xlabel("Age")
+plt.ylabel("Number of Survivors")
+plt.title("Ages of Titanic Survivors")
 plt.show()
 
 
