@@ -56,7 +56,7 @@ peeps = []
 for person in sorted(people):
     if person["Age"] == -1:
         continue
-    peeps.append([int(float(person['Age'])//10), person['Sex'], int(person['Pclass'])])
+    peeps.append([int(person['Age'] // 10), person['Sex'], person['Pclass'], person['FamSize'] // 2])
 
 print sorted(peeps)
 
