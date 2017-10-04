@@ -8,7 +8,7 @@ with open('./train.csv', 'rb') as csvfile:
 
 big_list = []
 
-for row in list:
+for row in dataList:
     dic = {}
     dic['PassengerId'] = row[0]
     dic['Survived'] = row[1]
