@@ -25,6 +25,10 @@ for row in dataList:
     people.append(dic)
 
 for person in people:
+    if person['Name'] == 'Name':
+        people.remove(person)
+
+for person in people:
     if person['Sex'] == "male":
         person['Sex'] = 0
     else:
