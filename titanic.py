@@ -24,4 +24,10 @@ for row in dataList:
     dic['Embarked'] = row[11]
     people.append(dic)
 
+for person in people:
+    if person['Sex'] == "male":
+        person['Sex'] = 0
+    else:
+        person['Sex'] = 1  
+
 print people
