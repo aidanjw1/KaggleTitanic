@@ -1,7 +1,7 @@
 import csv
 
 list = []
-with open('/Users/aidanwhite/Desktop/train.csv', 'rb') as csvfile:
+with open('./train.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
     for row in spamreader:
         list.append(row)
