@@ -7,26 +7,27 @@ with open('./train.csv', 'rb') as csvfile:
         dataList.append(row)
 
 people = []
+header = True
 
 for row in dataList:
-    dic = {}
-    dic['PassengerId'] = row[0]
-    dic['Survived'] = row[1]
-    dic['Pclass'] = row[2]
-    dic['Name'] = row[3]
-    dic['Sex'] = row[4]
-    dic['Age'] = row[5]
-    dic['SibSp'] = row[6]
-    dic['Parch'] = row[7]
-    dic['Ticket'] = row[8]
-    dic['Fare'] = row[9]
-    dic['Cabin'] = row[10]
-    dic['Embarked'] = row[11]
-    people.append(dic)
+    if not header:
+        dic = {}
+        dic['PassengerId'] = row[0]
+        dic['Survived'] = row[1]
+        dic['Pclass'] = row[2]
+        dic['Name'] = row[3]
+        dic['Sex'] = row[4]
+        dic['Age'] = row[5]
+        dic['FamSize'] = int(row[6]) + int(row[7])
+        dic['Ticket'] = row[8]
+        dic['Fare'] = row[9]
+        dic['Cabin'] = row[10]
+        dic['Embarked'] = row[11]
+        people.append(dic)
 
-for person in people:
-    if person['Name'] == 'Name':
-        people.remove(person)
+    else:
+        header = False
+
 
 for person in people:
     if person['Sex'] == "male":
